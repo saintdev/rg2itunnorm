@@ -26,7 +26,8 @@ class ReplayGainError(ValueError): pass
 class ReplayGain:
 	peak = 0
 	gain = 0
-	iTunNORM = None
+	iTunNORM = ['00000000', '00000000', '00000000', '00000000', '00024CA8',
+				'00024CA8', '00007FFF', '00007FFF', '00024CA8', '00024CA8']
 	def _to_soundcheck(self):
 		ret = []
 		ret.extend(self.iTunNORM)
