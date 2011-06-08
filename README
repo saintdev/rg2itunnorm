@@ -1,0 +1,11 @@
+A simple script to convert ReplayGain tags to iTunNORM values.
+
+It is (somewhat) based on Richard van den Berg's rg2sc script[1].
+
+With a few improvements. It doesn't remove all other ID3 tags from mp3 files.
+It handles both MP3 and MP4 files. There are only a few values iTunes looks at
+in the iTunNORM tag to determine the volume adjustment. These are copied from
+the existing iTunNORM tag. However, it doesn't handle the mp3gain default
+APEv2 tags.
+
+[1] http://www.vdberg.org/~richard/rg2sc.html
