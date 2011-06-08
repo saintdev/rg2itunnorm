@@ -64,11 +64,11 @@ class ReplayGainMP3(ReplayGain):
 			if verbose: print "%s" % tags[k]
 			for i in ("gain", "peak"):
 				setattr(self, i, getattr(tags[k], i))
+		else:
+			raise ReplayGainError("No RVA2 tag found!")
 		if tags.has_key("COMM:iTunNORM:'eng'"):
 			if verbose: print "Starting iTunNORM:%s" % tags["COMM:iTunNORM:'eng'"].text[0]
 			self.iTunNORM = tags["COMM:iTunNORM:'eng'"].text[0].split()
-		else:
-			raise ReplayGainError("No RVA2 tag found!")
 	def to_soundcheck(self, tags):
 		frame = mutagen.id3.COMM(encoding=0, lang=u'eng', desc=u'iTunNORM', text=self._to_soundcheck())
 		tags.add(frame)
