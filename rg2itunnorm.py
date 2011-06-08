@@ -35,7 +35,7 @@ class ReplayGain:
 			ret[1] = ret[0]
 		ret[2] = self.__gain_to_sc(2500)
 		if ret[3] != '00000000':
-			ret[3] = ret[3]
+			ret[3] = ret[2]
 		
 		if verbose: print "New iTunNORM: %s" % " ".join(ret)
 		return ' %s' % ' '.join(ret)
